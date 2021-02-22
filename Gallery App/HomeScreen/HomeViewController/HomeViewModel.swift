@@ -65,7 +65,7 @@ class HomeViewModel {
         let imageURL = "https://live.staticflickr.com/\(serverId)/\(id)_\(secret)_w.jpg"
         cell.galleryImageView.setImage(imageURL: URL(string: imageURL))
         cell.imageNameLabel.text = photos?[indexPath.row].title ?? "N/A"
-        cell.imageDateLabel.text = "Some Date"
+        cell.imageDateLabel.text = ""
     }
 
     func configureCollectionCell(indexPath: IndexPath, cell: GalleryListCellCollectionViewCell) {
@@ -75,7 +75,7 @@ class HomeViewModel {
         let imageURL = URL(string: "https://live.staticflickr.com/\(serverId)/\(id)_\(secret)_w.jpg")
         cell.galleryImageView.setImage(imageURL: imageURL)
         cell.imageNameLabel.text = photos?[indexPath.row].title ?? "N/A"
-        cell.imageDateLabel.text = "Some Date"
+        cell.imageDateLabel.text = ""
     }
 
     func configureCollectionCell(indexPath: IndexPath, cell: ImageDisplayCollectionViewCell) {
