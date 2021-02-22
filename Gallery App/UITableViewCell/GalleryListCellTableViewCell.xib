@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GalleryListCellTableViewCell" rowHeight="88" id="KGk-i7-Jjw" customClass="GalleryListCellTableViewCell" customModule="Gallery_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="579" height="88"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="579" height="88"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="lLW-dS-Wvf">
+                        <rect key="frame" x="5" y="5" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="4ev-8y-nMb"/>
+                            <constraint firstAttribute="width" constant="80" id="DZh-1v-Nyc"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hP-cy-lMy">
+                        <rect key="frame" x="100" y="20" width="464" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-OP-FAJ">
+                        <rect key="frame" x="100" y="51" width="464" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4hP-cy-lMy" secondAttribute="trailing" constant="15" id="4R7-Eu-V7a"/>
+                    <constraint firstItem="lLW-dS-Wvf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="5x0-C8-CGf"/>
+                    <constraint firstItem="4hP-cy-lMy" firstAttribute="leading" secondItem="lLW-dS-Wvf" secondAttribute="trailing" constant="15" id="KNx-G4-TIe"/>
+                    <constraint firstItem="lLW-dS-Wvf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="KmQ-cA-a8M"/>
+                    <constraint firstAttribute="trailing" secondItem="1Em-OP-FAJ" secondAttribute="trailing" constant="15" id="OaO-WX-i1w"/>
+                    <constraint firstItem="1Em-OP-FAJ" firstAttribute="leading" secondItem="lLW-dS-Wvf" secondAttribute="trailing" constant="15" id="TXf-0r-fDg"/>
+                    <constraint firstItem="1Em-OP-FAJ" firstAttribute="top" secondItem="4hP-cy-lMy" secondAttribute="bottom" constant="10" id="acV-Lw-2cX"/>
+                    <constraint firstItem="4hP-cy-lMy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="odL-WR-GKg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="galleryImageView" destination="lLW-dS-Wvf" id="AJl-AC-wUK"/>
+                <outlet property="imageDateLabel" destination="1Em-OP-FAJ" id="See-9K-W1b"/>
+                <outlet property="imageNameLabel" destination="4hP-cy-lMy" id="0uq-PH-QS0"/>
+            </connections>
+            <point key="canvasLocation" x="200.72463768115944" y="90.401785714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholderImage" width="32" height="32"/>
+    </resources>
+</document>
