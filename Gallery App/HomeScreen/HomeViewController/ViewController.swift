@@ -114,6 +114,13 @@ class ViewController: UIViewController {
         collectionView.isHidden = collectionView.isHidden
     }
 
+    private func displayImage(indexPath: IndexPath) {
+        let vc = ImageDisplayViewController()
+        vc.indexPath = indexPath
+        vc.photos = viewModel?.getAllPhotos() ?? []
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
     // MARK: - Actions
 
     @objc private func switchGalleryMode() {
@@ -154,7 +161,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Cell Selected")
+        displayImage(indexPath: indexPath)
     }
 
 }
@@ -182,7 +189,7 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Collection Cell Tapped")
+        displayImage(indexPath: indexPath)
     }
 
 }

@@ -13,6 +13,10 @@
 		F1157E8425E40F31009E8B57 /* PhotosDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1157E8325E40F31009E8B57 /* PhotosDetailModel.swift */; };
 		F1157E8825E40FEB009E8B57 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1157E8725E40FEB009E8B57 /* PhotoModel.swift */; };
 		F1157E8C25E411B7009E8B57 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1157E8B25E411B7009E8B57 /* APIs.swift */; };
+		F1157E9625E42C2F009E8B57 /* ImageDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1157E9425E42C2F009E8B57 /* ImageDisplayViewController.swift */; };
+		F1157E9725E42C2F009E8B57 /* ImageDisplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1157E9525E42C2F009E8B57 /* ImageDisplayViewController.xib */; };
+		F1157E9E25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1157E9C25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.swift */; };
+		F1157E9F25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1157E9D25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.xib */; };
 		F16E1A0A25E3FBAA0039DD96 /* GalleryListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E1A0825E3FBAA0039DD96 /* GalleryListCellTableViewCell.swift */; };
 		F16E1A0B25E3FBAA0039DD96 /* GalleryListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F16E1A0925E3FBAA0039DD96 /* GalleryListCellTableViewCell.xib */; };
 		F16E1A0E25E3FDEC0039DD96 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E1A0D25E3FDEC0039DD96 /* UIImageView+Extension.swift */; };
@@ -35,6 +39,10 @@
 		F1157E8325E40F31009E8B57 /* PhotosDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDetailModel.swift; sourceTree = "<group>"; };
 		F1157E8725E40FEB009E8B57 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		F1157E8B25E411B7009E8B57 /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
+		F1157E9425E42C2F009E8B57 /* ImageDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayViewController.swift; sourceTree = "<group>"; };
+		F1157E9525E42C2F009E8B57 /* ImageDisplayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDisplayViewController.xib; sourceTree = "<group>"; };
+		F1157E9C25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayCollectionViewCell.swift; sourceTree = "<group>"; };
+		F1157E9D25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDisplayCollectionViewCell.xib; sourceTree = "<group>"; };
 		F16E1A0825E3FBAA0039DD96 /* GalleryListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListCellTableViewCell.swift; sourceTree = "<group>"; };
 		F16E1A0925E3FBAA0039DD96 /* GalleryListCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryListCellTableViewCell.xib; sourceTree = "<group>"; };
 		F16E1A0D25E3FDEC0039DD96 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -115,6 +123,33 @@
 			path = APIs;
 			sourceTree = "<group>";
 		};
+		F1157E9325E42C13009E8B57 /* ImageDisplayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F1157E9425E42C2F009E8B57 /* ImageDisplayViewController.swift */,
+				F1157E9525E42C2F009E8B57 /* ImageDisplayViewController.xib */,
+			);
+			path = ImageDisplayViewController;
+			sourceTree = "<group>";
+		};
+		F1157E9A25E42D98009E8B57 /* GalleryListCellCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1E09A8425E406BE000288B3 /* GalleryListCellCollectionViewCell.swift */,
+				F1E09A8525E406BE000288B3 /* GalleryListCellCollectionViewCell.xib */,
+			);
+			path = GalleryListCellCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		F1157E9B25E42D9F009E8B57 /* ImageDisplayCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1157E9C25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.swift */,
+				F1157E9D25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.xib */,
+			);
+			path = ImageDisplayCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		F16E1A0425E3FB340039DD96 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +204,7 @@
 		F1D0A03B25E3F72300D9C582 /* Gallery App */ = {
 			isa = PBXGroup;
 			children = (
+				F1157E9325E42C13009E8B57 /* ImageDisplayViewController */,
 				F1157E7925E40DFB009E8B57 /* Networking */,
 				F1E09A8325E40686000288B3 /* UICollectionViewCell */,
 				F16E1A0725E3FB750039DD96 /* UITableViewCell */,
@@ -187,8 +223,8 @@
 		F1E09A8325E40686000288B3 /* UICollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				F1E09A8425E406BE000288B3 /* GalleryListCellCollectionViewCell.swift */,
-				F1E09A8525E406BE000288B3 /* GalleryListCellCollectionViewCell.xib */,
+				F1157E9B25E42D9F009E8B57 /* ImageDisplayCollectionViewCell */,
+				F1157E9A25E42D98009E8B57 /* GalleryListCellCollectionViewCell */,
 			);
 			path = UICollectionViewCell;
 			sourceTree = "<group>";
@@ -253,8 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F16E1A0B25E3FBAA0039DD96 /* GalleryListCellTableViewCell.xib in Resources */,
+				F1157E9725E42C2F009E8B57 /* ImageDisplayViewController.xib in Resources */,
 				F1D0A04925E3F72600D9C582 /* LaunchScreen.storyboard in Resources */,
 				F1E09A8725E406BE000288B3 /* GalleryListCellCollectionViewCell.xib in Resources */,
+				F1157E9F25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.xib in Resources */,
 				F1D0A04625E3F72600D9C582 /* Assets.xcassets in Resources */,
 				F1D0A04425E3F72300D9C582 /* Main.storyboard in Resources */,
 			);
@@ -315,8 +353,10 @@
 				F1157E7C25E40E1D009E8B57 /* HomeViewModel.swift in Sources */,
 				F1D0A04125E3F72300D9C582 /* ViewController.swift in Sources */,
 				F1157E8C25E411B7009E8B57 /* APIs.swift in Sources */,
+				F1157E9625E42C2F009E8B57 /* ImageDisplayViewController.swift in Sources */,
 				F1157E8125E40E9F009E8B57 /* GalleryDataModel.swift in Sources */,
 				F1E09A8625E406BE000288B3 /* GalleryListCellCollectionViewCell.swift in Sources */,
+				F1157E9E25E42DBA009E8B57 /* ImageDisplayCollectionViewCell.swift in Sources */,
 				F1D0A03D25E3F72300D9C582 /* AppDelegate.swift in Sources */,
 				F1157E8825E40FEB009E8B57 /* PhotoModel.swift in Sources */,
 				F1D0A03F25E3F72300D9C582 /* SceneDelegate.swift in Sources */,
