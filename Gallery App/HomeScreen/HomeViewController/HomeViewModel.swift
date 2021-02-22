@@ -55,13 +55,21 @@ class HomeViewModel {
     }
 
     func configueTableCell(indexPath: IndexPath, cell: GalleryListCellTableViewCell) {
-        cell.galleryImageView.setImage(imageURL: URL(string: photos?[indexPath.row].id ?? ""))
+        let id = photos?[indexPath.row].id ?? ""
+        let secret = photos?[indexPath.row].secret ?? ""
+        let serverId = photos?[indexPath.row].server ?? ""
+        let imageURL = "https://live.staticflickr.com/\(serverId)/\(id)_\(secret)_w.jpg"
+        cell.galleryImageView.setImage(imageURL: URL(string: imageURL))
         cell.imageNameLabel.text = photos?[indexPath.row].title ?? "N/A"
         cell.imageDateLabel.text = "Some Date"
     }
 
     func configureCollectionCell(indexPath: IndexPath, cell: GalleryListCellCollectionViewCell) {
-        cell.galleryImageView.setImage(imageURL: URL(string: photos?[indexPath.row].id ?? ""))
+        let id = photos?[indexPath.row].id ?? ""
+        let secret = photos?[indexPath.row].secret ?? ""
+        let serverId = photos?[indexPath.row].server ?? ""
+        let imageURL = URL(string: "https://live.staticflickr.com/\(serverId)/\(id)_\(secret)_w.jpg")
+        cell.galleryImageView.setImage(imageURL: imageURL)
         cell.imageNameLabel.text = photos?[indexPath.row].title ?? "N/A"
         cell.imageDateLabel.text = "Some Date"
     }

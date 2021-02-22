@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     private let collectionCellIdentifier = "GalleryListCellCollectionViewCell"
     private let galleryItemCellSize = CGSize(width: 200.0, height: 180.0)
     private let galleryItemCellSpacing: CGFloat = 8.0
-    private let listModeTitle = "List Mode"
+    private let listModeTitle = "Switch"
     private let gridModeTitle = "Grid Mode"
     private var isListMode: Bool = false
 
