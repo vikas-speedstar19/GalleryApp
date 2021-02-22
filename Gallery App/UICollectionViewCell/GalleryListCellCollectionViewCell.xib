@@ -54,6 +54,11 @@
                 <constraint firstItem="vdk-WY-u87" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="wrA-m2-c3n"/>
             </constraints>
             <size key="customSize" width="241" height="191"/>
+            <connections>
+                <outlet property="galleryImageView" destination="vdk-WY-u87" id="ZYl-4W-Qyw"/>
+                <outlet property="imageDateLabel" destination="HJY-ZV-F4K" id="dcR-Qk-xxE"/>
+                <outlet property="imageNameLabel" destination="U8V-qI-TPl" id="ig4-hS-uKe"/>
+            </connections>
             <point key="canvasLocation" x="-74.637681159420296" y="122.20982142857142"/>
         </collectionViewCell>
     </objects>

@@ -21,12 +21,17 @@ class ViewController: UIViewController {
     private let gridModeTitle = "Grid Mode"
     private var isListMode: Bool = false
 
+    // MARK: - Properties
+
+    var viewModel: HomeViewModel? = nil
+
     // MARK: - IBOutlets
 
     @IBOutlet weak var tableViewHolder: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionViewHolder: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     // MARK: - View Controller Lifecycle
 
@@ -34,6 +39,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        setupViewModelAndFetchPhotos()
         showCollectionView()
     }
 
@@ -77,6 +83,13 @@ class ViewController: UIViewController {
         collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
     }
 
+    private func setupViewModelAndFetchPhotos() {
+        viewModel = HomeViewModel()
+        viewModel?.delegate = self
+        showLoadingView()
+        viewModel?.fetchGalleryImages()
+    }
+
     private func showTableView() {
         tableViewHolder.isHidden = false
         collectionViewHolder.isHidden = true
@@ -85,6 +98,20 @@ class ViewController: UIViewController {
     private func showCollectionView() {
         tableViewHolder.isHidden = true
         collectionViewHolder.isHidden = false
+    }
+
+    private func showLoadingView() {
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        tableView.isHidden = tableView.isHidden
+        collectionView.isHidden = collectionView.isHidden
+    }
+
+    private func hideLoadingView() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        tableView.isHidden = tableView.isHidden
+        collectionView.isHidden = collectionView.isHidden
     }
 
     // MARK: - Actions
@@ -105,13 +132,14 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel?.getAllPhotos().count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier) as? GalleryListCellTableViewCell else {
             return UITableViewCell()
         }
+        viewModel?.configueTableCell(indexPath: indexPath, cell: cell)
         return cell
     }
 
@@ -136,13 +164,14 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel?.getAllPhotos().count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellIdentifier, for: indexPath) as? GalleryListCellCollectionViewCell else {
             return UICollectionViewCell()
         }
+        viewModel?.configureCollectionCell(indexPath: indexPath, cell: cell)
         return cell
     }
 
@@ -154,6 +183,34 @@ extension ViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Collection Cell Tapped")
+    }
+
+}
+
+// MARK: - HomeViewModelDelegate
+
+extension ViewController: HomeViewModelDelegate {
+
+    func displayPhotos() {
+        hideLoadingView()
+        tableView.reloadData()
+        collectionView.reloadData()
+    }
+
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension ViewController: UIScrollViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let isReachingEnd = scrollView.contentOffset.y >= 0
+            && scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)
+        if isReachingEnd {
+            if !(viewModel?.isWaiting ?? false) && (viewModel?.isMore ?? false) {
+                viewModel?.fetchGalleryImages()
+            }
+        }
     }
 
 }

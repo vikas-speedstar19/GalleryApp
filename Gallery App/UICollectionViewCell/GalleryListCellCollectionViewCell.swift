@@ -11,7 +11,9 @@ class GalleryListCellCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IBOutlets
 
-    
+    @IBOutlet weak var galleryImageView: UIImageView!
+    @IBOutlet weak var imageNameLabel: UILabel!
+    @IBOutlet weak var imageDateLabel: UILabel!
 
     // MARK: - Cell Lifecycle
 

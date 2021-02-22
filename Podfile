@@ -8,5 +8,6 @@ target 'Gallery App' do
   # Pods for Gallery App
 
 pod 'Kingfisher'
+pod 'Alamofire', '~> 5.4'
 
 end
